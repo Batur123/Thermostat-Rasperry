@@ -15,3 +15,6 @@ RPi.GPIO as GPIO <br>
 time <br>
 board <br>
 dht11 <br>
+
+## GPIO Pin Connections <br>
+Will be added.

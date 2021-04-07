@@ -1,25 +1,25 @@
-#Kütüphaneler
+#Libraries
 import RPi.GPIO as GPIO 
 import time 
 import board
 import dht11
 
-#PIN Modları
+#PIN Modes
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-# LED Işıkları için PIN Ayarlama
+# LED Light PINS
 GPIO.setup(17, GPIO.OUT) #Red Led (GPIO 17 Pin)
 GPIO.setup(27, GPIO.OUT) #Green Led (GPIO 27 Pin)
 GPIO.setup(22, GPIO.OUT) #Blue Led (GPIO 22 Pin) 
 GPIO.setup(26, GPIO.OUT) #Yellow Led (GPIO 26 Pin)
 
-# Butonlar için PIN Ayarlama
-GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP) # 1.Buton (GPIO 5 Pin)
-GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_UP) # 2. Ortadaki Buton (GPIO 6 Pin)
-GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) # 3.Buton (GPIO 16 Pin)
+# Button PINS
+GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP) # First Buton (GPIO 5 Pin)
+GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Second Buton (GPIO 6 Pin)
+GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Third Buton (GPIO 16 Pin)
 
-# Değişkenler
+# Variables
 Sicaklik = 25
 AyarlamaModu = True
 Arttir = False
@@ -30,15 +30,13 @@ TempBool = True
 global Pressed2
 Pressed2 = False
     
-# Led Işığı Fonksiyonları
-# Kırmızı -> Uyarı
-# Yeşil -> Stabil
-# Mavi -> Aşmış
-# Sarı -> Hata
+# Led Functions
+# Red -> Warning
+# Green -> Stabile
+# Blue -> Over
+# Yellow -> Error
 
-
-#Kırmızı Işık Fonksiyonu
-#Kırmızı Işığı Yakıp Söndürür
+#Red Light Function
 def RedLight(check):
     if check == 0:
         for i in range(3):
@@ -50,34 +48,31 @@ def RedLight(check):
         GPIO.output(17, False)
         time.sleep(0.5) 
     
-#Yeşil Işık Fonksiyonu
-#Yeşil Işığı Yakıp Söndürür
+#Green Light Function
 def GreenLight():
     GPIO.output(27, True)
     time.sleep(1)
     GPIO.output(27, False)
     time.sleep(1)
-    print("Yeşil Işık")
+    print("Green")
 
-#Mavi Işık Fonksiyonu
-#Mavi Işığı Yakıp Söndürür
+#Blue Light FUnction
 def BlueLight():
    GPIO.output(22, True)
    time.sleep(1)
    GPIO.output(22, False)
    time.sleep(1)
-   print("Mavi Işık")
+   print("Blue")
 
-#Sarı Işık Fonksiyonu
-#Sarı Işığı Yakıp Söndürür
+#Yellow Light Function
 def YellowLight():
    GPIO.output(26, True)
    time.sleep(1)
    GPIO.output(26, False)
    time.sleep(1)
-   print("Sarı Işık")
+   print("Yellow")
    
-#DHT11 Sıcaklık ve Nem Sensörü Fonksiyonu
+#DHT11 Temp Sensor
 def TempSensor():
     
     while True:
@@ -89,7 +84,7 @@ def TempSensor():
             if not GPIO.input(6):
                 if not Pressed2:
                  print('_________________________________')
-                 print("Sıcaklık ayarlama moduna geçiliyor.")
+                 print("Configuration Mode ON")
                  print('_________________________________')
                  pressed = True
                  AyarlamaModu = True
@@ -103,8 +98,8 @@ def TempSensor():
     #         time.sleep(3.0)
             try:
                 if result.is_valid():
-                    print("Sıcaklık: %-3.1f C" % result.temperature)
-                    print("Nem: %-3.1f %%" % result.humidity)
+                    print("Temp: %-3.1f C" % result.temperature)
+                    print("Humidity: %-3.1f %%" % result.humidity)
                     if result.temperature < 25:
                         RedLight(1)
                     elif result.temperature > 25 and result.temperature < 35:
@@ -128,12 +123,12 @@ def TempSensor():
 
 
 # __Main__
-RedLight(1) #Deneme amaçlı bir kez kırmızı ışık yakılır.
+RedLight(1) 
 
 while True:
     if AyarlamaModu:
         if TempBool:
-         print("Sıcaklık ayarlama modundasınız. Sensör bu sırada çalışmayacaktır.")
+         print("You are now in configuration mode. Sensor will not work.")
          TempBool = False
         else:
         #TempSensor()
@@ -179,5 +174,5 @@ while True:
     else:
         TempSensor()
         
-print("Çıkış yapıldı.")
+print("Exit1")
 

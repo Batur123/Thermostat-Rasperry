@@ -88,9 +88,9 @@ def TempSensor():
                  print('_________________________________')
                  pressed = True
                  AyarlamaModu = True
-                 Kontrol = True
-                 # return eklencek. While döngüsünü bitirmek için
-                 # button basılmadı
+                 # Kontrol = True 01
+                 # return 00
+                 # button 10
                 else:
                   pressed = False
                   time.sleep(0.1)

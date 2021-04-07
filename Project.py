@@ -20,13 +20,13 @@ GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Second Buton (GPIO 6 Pin)
 GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Third Buton (GPIO 16 Pin)
 
 # Variables
-Sicaklik = 25
-AyarlamaModu = True
-Arttir = False
-Azalt = False
-AcKapat = False
-Breakit = False
-TempBool = True
+Sicaklik = 25 #temperature
+AyarlamaModu = True #configmode boolean
+Arttir = False #increment
+Azalt = False #decrement
+AcKapat = False #openclose
+Breakit = False #breakit
+TempBool = True 
 global Pressed2
 Pressed2 = False
     

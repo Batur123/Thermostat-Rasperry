@@ -1,6 +1,6 @@
 # Raspberry Pi 4 Adjustable Thermostat Project
 
-## H2 Prerequisites <br>
+## Prerequisites <br>
 Raspberry Pi 4 <br>
 Jumper Cables (M-F) (M-M) <br>
 DHT11 Humidity & Temperature Sensor <br>

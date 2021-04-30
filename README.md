@@ -1,5 +1,5 @@
-# Raspberry Pi 4 Adjustable Thermostat Project
-
+# Raspberry Pi 4 Adjustable Thermostat Project<br>
+Mandatory School Intern Project <br>
 ## Prerequisites <br>
 Raspberry Pi 4 <br>
 Jumper Cables (M-F) (M-M) <br>

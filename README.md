@@ -15,6 +15,7 @@ RPi.GPIO as GPIO <br>
 time <br>
 board <br>
 dht11 <br>
+socket <br>
 
 ## GPIO Pin Connections <br>
 Raspberry Pin-2 (5v)-> Breadboard + (Red Line)<br>

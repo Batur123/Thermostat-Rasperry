@@ -24,9 +24,9 @@ Raspberry Pin-7 (GPIO-4)-> DHT11 Data Pin<br>
 Raspberry Pin-11 (GPIO-17)-> 23 Ohm Resistor-> Red Led (+) (Long Leg)<br>
 Raspberry Pin-13 (GPIO-27)-> 23 Ohm Resistor-> Green Led (+) (Long Leg)<br>
 Raspberry Pin-15 (GPIO-22)-> 23 Ohm Resistor-> Blue Led (+) (Long Leg)<br>
-Raspberry Pin-29 (GPIO-5)-> Big Buton-1 VCC<br>
-Raspberry Pin-31 (GPIO-6)-> Small Buton-1 VCC<br>
-Raspberry Pin-36 (GPIO-16)-> Big Buton-2 VCC<br>
+Raspberry Pin-29 (GPIO-5)-> Big Button-1 VCC<br>
+Raspberry Pin-31 (GPIO-6)-> Small Button-1 VCC<br>
+Raspberry Pin-36 (GPIO-16)-> Big Button-2 VCC<br>
 Raspberry Pin-37 (GPIO-26)-> 23 Ohm Resisor-> Yellow Led (+) (Long Leg)<br>
 Red Led (-) (Short Leg)-> Breadboard (-) (Blue Line)<br>
 Green Led (-) (Short Leg)-> Breadboard (-) (Blue Line)<br>
@@ -34,7 +34,7 @@ Blue Led (-) (Short Leg)-> Breadboard (-) (Blue Line)<br>
 Yellow Led (-) (Short Leg)-> Breadboard (-) (Blue Line)<br>
 DHT11 VCC-> Breadboard (+) (Red Line)<br>
 DHT11 GND-> Breadboard (-) (Blue Line)<br>
-Büyük Buton-1 GND-> Breadboard (-) (Blue Line)<br>
-Küçük Buton-1 GND-> Breadboard (-) (Blue Line)<br>
-Büyük Buton-2 GND-> Breadboard (-) (Blue Line)<br>
+Big Button-1 GND-> Breadboard (-) (Blue Line)<br>
+Small Button-1 GND-> Breadboard (-) (Blue Line)<br>
+Big Button-2 GND-> Breadboard (-) (Blue Line)<br>
 
